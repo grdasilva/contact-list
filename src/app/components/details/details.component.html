@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+        Editar Contato
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen>
+  <ion-card class="welcome-card">
+    <div class="image-container">
+      <img src="{{ contactDetails.image }}" class="image-contact">
+    </div> 
+    <ion-card-header>
+      <ion-card-title class="title-card">{{ contactDetails.nome }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="contact">
+        <ion-input placeholder="Nome" formControlName="nome" value="{{ contactDetails.nome }}"></ion-input>
+        <ion-input placeholder="Telefone" formControlName="telefone" value="{{ contactDetails.telefone }}"></ion-input>
+        <ion-input placeholder="Email" formControlName="email" value="{{ contactDetails.email }}"></ion-input>
+        <ion-button color="primary" (click)="saveContact()">Salvar</ion-button>
+        <ion-button color="danger" (click)="removeData()">Remover</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

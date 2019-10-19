@@ -1,0 +1,25 @@
+.title-card { 
+    font-size: 23px;
+    text-align: center;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.image-contact {
+    border-radius: 50%;
+}
+
+img {
+    max-width: 30%;
+    border: 0;
+}
+
+.button-save {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
