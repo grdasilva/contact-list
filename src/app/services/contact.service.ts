@@ -63,11 +63,6 @@ export class ContactService {
         return this.http.get<Contact[]>(this.dataUrl);
     }
 
-    // removeData() {
-    //     this.noteService.removeNote(this.note);
-    //     this.navCtrl.pop();
-    // }
-
     pushToArray(array, obj) {
         const index = array.findIndex((e) => e.id === obj.id);
 
