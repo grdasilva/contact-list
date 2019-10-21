@@ -7,6 +7,7 @@
 *.tmp
 *.tmp.*
 *.sublime-project
+**/src/environments/environment.ts
 *.sublime-workspace
 .DS_Store
 Thumbs.db

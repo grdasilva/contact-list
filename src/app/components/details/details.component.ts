@@ -33,7 +33,6 @@ export class DetailsComponent implements OnInit {
       if (params && params.special) {
         this.contactDetails = JSON.parse(params.special);
       }
-      console.log(params.special);
     });
     
       this.contacts$ = this.contactService.getData();

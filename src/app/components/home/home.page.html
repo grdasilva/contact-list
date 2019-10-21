@@ -12,25 +12,24 @@
 </ion-header>
 
 <ion-content fullscreen>
-  <ion-card class="welcome-card"> 
+  <ion-card class="welcome-card">
     <ion-card-header>
       <ion-card-title>Contatos</ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <ion-list>
-        <ion-input placeholder="Busque contacts" [(ngModel)]="searchText"></ion-input>
-          <div *ngFor="let contact of contacts; let i = index">
-            <ion-item (click)="gerarDados(contact, i)">
-              <ion-avatar slot="start">
-                <img src="{{contact.image}}">
-              </ion-avatar>
-              <ion-label>
-                <h2>{{ contact.nome }}</h2>
-                <h3>{{ contact.telefone  }}</h3>
-                <p>{{ contact.email }}</p>
-              </ion-label>
-            </ion-item>
-          </div>
+        <div *ngFor="let contact of contacts; let i = index">
+          <ion-item (click)="gerarDados(contact, i)">
+            <ion-avatar slot="start">
+              <img src="{{ contact.image }}">
+            </ion-avatar>
+            <ion-label>
+              <h2>{{ contact.nome }}</h2>
+              <h3>{{ contact.telefone  }}</h3>
+              <p>{{ contact.email }}</p>
+            </ion-label>
+          </ion-item>
+        </div>
       </ion-list>
     </ion-card-content>
   </ion-card>

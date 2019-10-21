@@ -33,7 +33,6 @@ export class HomePage {
 
 	gerarDados(dado, index) {
 		dado.id = index;
-		console.log(dado.id);
 		let navigationExtras: NavigationExtras = {
 		  queryParams: {
 			special: JSON.stringify(dado)

@@ -18,8 +18,12 @@ img {
     border: 0;
 }
 
-.button-save {
+.button-actions {
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin-top: 15px;
+}
+
+.card-content-ios {
+    padding-top: 0;
 }
