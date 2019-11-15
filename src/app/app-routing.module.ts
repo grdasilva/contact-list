@@ -7,7 +7,8 @@ const routes: Routes = [
   { path: 'home', loadChildren: () => import('./components/home/home.module').then( m => m.HomePageModule), canActivate: [AuthGuard]},
   { path: 'login', loadChildren: () => import('./components/login/login.module').then( m => m.LoginComponentModule)},
   { path: 'register', loadChildren: () => import('./components/register/register.module').then( m => m.RegisterComponentModule)},
-  { path: 'details', loadChildren: () => import('./components/details/details.module').then( m => m.DetailsComponentModule), canActivate: [AuthGuard]}
+  { path: 'details', loadChildren: () => import('./components/details/details.module').then( m => m.DetailsComponentModule), canActivate: [AuthGuard]},
+  { path: 'details/:id', loadChildren: () => import('./components/details/details.module').then( m => m.DetailsComponentModule), canActivate: [AuthGuard]}
 ];
 
 @NgModule({

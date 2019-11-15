@@ -18,7 +18,10 @@ export class HomePage {
 	constructor(private router: Router, public toast: ToastService, public contactService: ContactService) { }
 
 	ngOnInit() {
-		this.contacts = this.contactService.contatos;
+		this.contactService.getContacts().subscribe(res => {
+			this.contacts = res;
+			console.log(this.contacts)
+		});
 	}
 
 	onLogout() {
@@ -34,9 +37,9 @@ export class HomePage {
 	gerarDados(dado, index) {
 		dado.id = index;
 		let navigationExtras: NavigationExtras = {
-		  queryParams: {
-			special: JSON.stringify(dado)
-		  }
+			queryParams: {
+				special: JSON.stringify(dado)
+			}
 		};
 		this.router.navigate(['details'], navigationExtras);
 	}

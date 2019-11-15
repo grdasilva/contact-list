@@ -18,19 +18,30 @@
     </ion-card-header>
     <ion-card-content>
       <ion-list>
-        <div *ngFor="let contact of contacts; let i = index">
-          <ion-item (click)="gerarDados(contact, i)">
-            <ion-avatar slot="start">
-              <img src="{{ contact.image }}">
-            </ion-avatar>
-            <ion-label>
-              <h2>{{ contact.nome }}</h2>
-              <h3>{{ contact.telefone  }}</h3>
-              <p>{{ contact.email }}</p>
-            </ion-label>
-          </ion-item>
+        <!-- <div *ngIf="contacts.length == 0">
+          <ion-item>Não há contatos cadastrados</ion-item>
+        </div> -->
+        <div>
+          <!-- *ngIf="contacts.length > 0" -->
+          <div *ngFor="let contact of contacts; let i = index">
+            <ion-item [routerLink]="['/details', contact.id]">
+              <ion-avatar slot="start">
+                <img src="../../../assets/imgs/avatar.png">
+              </ion-avatar>
+              <ion-label>
+                <h2>{{ contact.name }}</h2>
+                <h3>{{ contact.phone }}</h3>
+                <p>{{ contact.email }}</p>
+              </ion-label>
+            </ion-item>
+          </div>
         </div>
       </ion-list>
     </ion-card-content>
   </ion-card>
+  <ion-fab style="cursor: pointer;" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/details" routerDirection="forward">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

@@ -1,6 +1,6 @@
 export interface Contact {
-    id?: number,
-    nome?:string,
-    telefone?: number,
-    email?: string
+    name: String,
+    phone: String,
+    email: String,
+    picture: String
 }
