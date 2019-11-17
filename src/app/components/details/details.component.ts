@@ -14,6 +14,7 @@ import { AlertController, NavController, LoadingController } from '@ionic/angula
 export class DetailsComponent implements OnInit {
 
   contactId;
+  newContact = false;
 
   contactDetails: Contact = {
     name: null,
@@ -31,8 +32,9 @@ export class DetailsComponent implements OnInit {
     this.contactId = this.route.snapshot.params['id'];
     if (this.contactId) {
       this.loadContact();
+    } else {
+      this.newContact = true;
     }
-    
       // this.contacts$ = this.contactService.getData();
   }
 

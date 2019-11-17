@@ -1,7 +1,10 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
+    <ion-title *ngIf="newContact == false">
       Editar Contato
+    </ion-title>
+    <ion-title *ngIf="newContact == true">
+      Cadastrar Contato
     </ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
@@ -19,14 +22,15 @@
     <ion-card-content>
       <form [formGroup]="contact">
         <span style="color:black">Nome</span>
-        <ion-input class="form-control" placeholder="Nome" formControlName="name" [(ngModel)]="contactDetails.name"></ion-input>
+        <ion-input class="form-control" required placeholder="Nome" formControlName="name" [(ngModel)]="contactDetails.name"></ion-input>
         <span style="color:black">Telefone</span>
-        <ion-input class="form-control" placeholder="Telefone" formControlName="phone" [(ngModel)]="contactDetails.phone"></ion-input>
+        <ion-input class="form-control" required placeholder="Telefone" formControlName="phone" [(ngModel)]="contactDetails.phone"></ion-input>
         <span style="color:black">Email</span>
-        <ion-input class="form-control" placeholder="Email" formControlName="email" [(ngModel)]="contactDetails.email"></ion-input>
+        <ion-input class="form-control" required placeholder="Email" formControlName="email" [(ngModel)]="contactDetails.email"></ion-input>
         <div class="button-actions">
-          <ion-button color="primary" (click)="saveContact()">Salvar</ion-button>
-          <ion-button color="danger" (click)="removeData()">Excluir</ion-button>
+          <ion-button *ngIf="newContact == false" color="primary" (click)="saveContact()" [disabled]="contact.invalid">Salvar</ion-button>
+          <ion-button *ngIf="newContact == true" color="primary" (click)="saveContact()" [disabled]="contact.invalid">Cadastrar</ion-button>
+          <ion-button *ngIf="newContact == false" color="danger" (click)="removeData()">Excluir</ion-button>
         </div>
       </form>
     </ion-card-content>
